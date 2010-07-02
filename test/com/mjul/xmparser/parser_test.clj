@@ -6,11 +6,6 @@
 (defn tokenize [s] (vec s))
 (defn parse-str [prod-fn input] (first (prod-fn (struct state-s (tokenize input) 0 0))))
 
-(deftest document-production
-  ;; TODO
-  (is false))
-
-
 (deftest characters-test
   (testing "2.2 Characters"
     (testing "[2] Char-lit"
@@ -55,17 +50,16 @@
 	       (create-token :Name "bar123") "bar123")))
       (testing "[6] Names"
 	(testing "With valid input"
-	  (are [match input] (= match (parse-result Names input))
+	  (are [match input] (= match (parse-str Names input))
 	       (create-token :Names ["foo" "bar"]) "foo bar"
 	       (create-token :Names ["bar123" "a-b.c"]) "bar123 a-b.c")))
-      (testing "[7] Names"
+      (testing "[7] Nmtoken"
 	(testing "With valid input"
-	  (are [match input] (= match (parse-result Nmtoken input))
+	  (are [match input] (= match (parse-str Nmtoken input))
 	       (create-token :Nmtoken "foo") "foo bar"
 	       (create-token :Nmtoken "bar123") "bar123 a-b.c")))
       (testing "[8] Names"
 	(testing "With valid input"
-	  (are [match input] (= match (parse-result Nmtokens input))
+	  (are [match input] (= match (parse-str Nmtokens input))
 	       (create-token :Nmtokens ["foo" "bar"]) "foo bar"
 	       (create-token :Nmtokens ["bar123" "a-b.c"]) "bar123 a-b.c"))))))
-
