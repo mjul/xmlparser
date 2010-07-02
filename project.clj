@@ -1,4 +1,4 @@
-(defproject com.mjul/xmparser "0.1.0-SNAPSHOT"
+(defproject com.mjul/xmlparser "0.1.0-SNAPSHOT"
   :description "Experimental Clojure XML parser using a parser combinator"
   :dependencies [[org.clojure/clojure "1.1.0"]
                  [org.clojure/clojure-contrib "1.1.0"]

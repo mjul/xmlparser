@@ -1,4 +1,4 @@
-(ns com.mjul.xmparser.parser
+(ns com.mjul.xmlparser.parser
   (:use name.choi.joshua.fnparse clojure.contrib.error-kit
         [clojure.contrib.seq-utils :only [flatten]]))
 

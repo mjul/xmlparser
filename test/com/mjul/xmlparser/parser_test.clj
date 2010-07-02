@@ -1,5 +1,5 @@
-(ns com.mjul.xmparser.parser-test
-  (:use [com.mjul.xmparser.parser] :reload-all)
+(ns com.mjul.xmlparser.parser-test
+  (:use [com.mjul.xmlparser.parser] :reload-all)
   (:use [name.choi.joshua.fnparse])
   (:use [clojure.test]))
 
